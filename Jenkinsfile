@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage ('scm') {
             steps {
-                git branch : 'release' , url 'https://github.com/pramesh123/mul0gol.git'
+                git branch : 'release' , url : 'https://github.com/pramesh123/mul0gol.git'
             }
 
         }
