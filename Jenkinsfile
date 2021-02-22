@@ -1,10 +1,10 @@
 pipeline {
-    agent { label 'ltecomm'}
-    triggers { cron('H * * * *') }
+    agent { label 'ltelog'}
+    triggers { cron('59 23 * * *') }
     stages {
         stage ('scm') {
             steps {
-                git branch : 'developer' , url 'https://github.com/pramesh123/mul-gol.git'
+                git branch : 'qa' , url 'https://github.com/pramesh123/mul0gol.git'
             }
 
         }
