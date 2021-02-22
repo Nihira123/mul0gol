@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'ltecomm'}
-    
+    triggers { cron('H * * * 1-5') }
     stages {
         stage ('scm') {
             steps {
