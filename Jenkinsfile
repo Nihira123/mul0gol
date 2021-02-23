@@ -19,12 +19,7 @@ pipeline {
 
         }
 
-        stage ('post build') {
-            steps {
-            archiveArtifacts artifacts: 'gameoflife-web/target/gameoflife.war', fingerprint: true
-            //stash name: 'warfile', includes: 'gameoflife-web/target/*.war'
-        }
-        }
+        
         
         
     }
