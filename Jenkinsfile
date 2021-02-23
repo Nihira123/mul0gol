@@ -10,9 +10,10 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withSonarQubeEnv('SONAR-7.1') {}
+                withSonarQubeEnv('SONAR-7.1') {
 
                 sh 'mvn clean package sonar:sonar'
+                }
             }
             }
 
@@ -21,7 +22,7 @@ pipeline {
         stage ('post build') {
             steps {
             archiveArtifacts artifacts: 'gameoflife-web/target/gameoflife.war', fingerprint: true
-            stash name: 'warfile', includes: 'gameoflife-web/target/*.war'
+            //stash name: 'warfile', includes: 'gameoflife-web/target/*.war'
         }
         }
         
